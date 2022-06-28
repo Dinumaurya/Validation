@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+
+<nav class="navbar navbar-light bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Demo App
+  </a>
+</nav>
+<div class="container">
+  <div id="content">
+    <form class='form-inline'>
+      <div class="input-group">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<body>
+  <div class="text-center">
+    <button class="btn btn-default btn-rounded mb-4" data-bs-toggle="modal" data-bs-target="#modalContactForm">Register </button>
+  </div>
+  <div class="modal"  id="modalContactForm" [ngClass]="'ng-scope loaded'">
+    <div class="modal-dialog"  style="max-width: 80%;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Register</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3 max-width">
+          <div class="row">
+            <div class="col-md-3 col-lg-3">
+              <div class="form-group" >
+                  <div class="form-label">Profile Image</div>
+                  <div class="input-group file-browser">
+  
+                      <input class="form-control border-right-0 browse-file" type="file" id="vidProThumbnail1"   (change)="uploadedFile($event)"  #Image accept="image/*" />
+  
+                  </div>
+                  <img [src]="url" style="max-width: 30%;" *ngIf="url" />
+  
+              </div>
+              <img  style="max-width: 30%;" >
+              <div style="color: red;" id="lblerror"></div>
+          </div>
+          <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" autocomplete="off" class="form-control" id="txtFName" [(ngModel)]="txtFName"  name="txtFName" placeholder="First Name" />
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="text" autocomplete="off" class="form-control" id="txtEmail" [(ngModel)]="txtEmail"  name="txtEmail" placeholder="Email Id" />
+          </div>
+      </div>
+      <div class="col-md-3 col-lg-3">
+        <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" autocomplete="off" class="form-control" id="txtLName" [(ngModel)]="txtLName"  name="txtLName" placeholder="Last Name" />
+        </div>
+    </div>
+          </div>
+          <div class="row">
+        
+      <div class="col-md-3 col-lg-3">
+        <div class="form-group">
+            <label class="form-label">Address</label>
+            <input type="text" autocomplete="off" class="form-control" id="txtAdd" [(ngModel)]="txtAdd"  name="txtAdd" placeholder="Enter address" />
+        </div>
+    </div>
+        <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+                <label class="form-label">Age</label>
+                <input autocomplete="off" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" type="range" [(ngModel)]="txtAge"   class="form-control" id="txtAge" name="txtAge" placeholder="Age" />
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <div class="form-group">
+              <label class="form-label">Mobile No</label>
+              <input autocomplete="off" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" type="text" [(ngModel)]="txtMob" class="form-control"   id="txtMob"  name="txtMob" placeholder="Mobile no" />
+          </div>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div class="form-group">
+            <label class="form-label">Select State</label>
+            <select name="beast" aria-placeholder="Select State" id="txtState" [(ngModel)]="txtState"  name="txtState" class="form-control custom-select select2-show-search">
+                <option value="">--Select State--</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Goa">Goa</option>
+               
+            </select>
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <div class="form-group">
+              <label class="form-label">Select Country</label>
+              <select name="beast" aria-placeholder="Select Country" id="txtCont" [(ngModel)]="txtCont" name="txtCont" class="form-control custom-select select2-show-search">
+                  
+                  <option value="India">India</option>                   
+              </select>
+          </div>
+        </div>
+    </div>
+    <label class="custom-control custom-checkbox mt-4">
+      <input type="checkbox" name="txterm"  id="txterm" [(ngModel)]="txterm" class="custom-control-input">
+      <span class="custom-control-label">Agree the <a href="#">terms and policy</a></span>
+  </label>
+          </div>
+        <div class="row">
+      
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <a id="hideUpdate1" (click)="ProRelated();" class="btn btn-primary mr-3-" >Submit</a>
+  
+        
+  
+          <a id="ShowUpdate1" style="display: none;" class="btn btn-primary mr-3-" >Update</a>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</body>
+</html>
